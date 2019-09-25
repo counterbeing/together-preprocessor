@@ -1,0 +1,19 @@
+{
+  "name": "together-preprocessor",
+  "version": "1.0.0",
+  "description": "Process and upload images",
+  "main": "index.js",
+  "author": "Cory Logan",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "chalk": "^2.4.2",
+    "date-fns": "^2.3.0",
+    "dms2dec": "^1.1.0",
+    "exif": "^0.6.0",
+    "md5-file": "^4.0.0",
+    "showdown": "^1.9.0"
+  }
+}
