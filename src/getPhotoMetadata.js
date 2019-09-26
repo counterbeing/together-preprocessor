@@ -6,12 +6,11 @@ import { promises as fs } from "fs";
 var ExifImage = require("exif").ExifImage;
 const dateFormat = "YYYY:MM:DD HH:mm:ss";
 
-async function getPhotoMetadata(file) {
+async function getPhotoMetadata(filename, buffer) {
   let promise;
-  const buf = await fs.readFile(file);
   return new Promise(resolve => {
-    let checksum = md5(buf);
-    new ExifImage({ image: buf }, function(error, exifData) {
+    let checksum = md5(buffer);
+    new ExifImage({ image: buffer }, function(error, exifData) {
       let dec;
       if (exifData.gps.GPSLatitude) {
         dec = dms2dec(
@@ -27,7 +26,7 @@ async function getPhotoMetadata(file) {
       const description = exifData.image.ImageDescription;
 
       resolve({
-        file: path.basename(file),
+        file: path.basename(filename),
         date: moment(exifData.exif.DateTimeOriginal, dateFormat).toDate(),
         description,
         lat: dec[0],
