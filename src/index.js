@@ -24,6 +24,7 @@ async function run() {
   const job = Promise.map(
     paths,
     async function(p) {
+      process.stdout.write("-")
       const buffer = await fs.readFile(p)
       const meta = await getPhotoMetadata(p, buffer)
       const alreadyExists = photoIndex.some(photoFromIndex => {
@@ -36,6 +37,7 @@ async function run() {
       if (alreadyExists) {
         // TODO: update caption and location, or totally replace
         process.stdout.write(`S`)
+        fs.unlink(p)
         return
       } else {
         photoIndex.push(meta)
@@ -67,10 +69,14 @@ async function run() {
         .map(p => {
           return upload(p.buffer, p.filename)
         })
-      let processedPhotos = await Promise.all(processedPhotoPromises)
+      let processedPhotos = await Promise.all(processedPhotoPromises).then(
+        () => {
+          fs.unlink(p)
+        }
+      )
       return meta
     },
-    { concurrency: 5 }
+    { concurrency: 10 }
   )
 
   let j = await job.filter(Boolean)
