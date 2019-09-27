@@ -686,6 +686,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@mapbox/sexagesimal@counterbeing/sexagesimal":
+  version "1.2.0"
+  resolved "https://codeload.github.com/counterbeing/sexagesimal/tar.gz/e4cdb3c91f51cd1681b14216fc0512fd91ea8099"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
