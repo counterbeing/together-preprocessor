@@ -94,39 +94,42 @@
     {
         "file": "IMG_1636.jpg",
         "date": "2018-12-16T21:20:13.000Z",
+        "description": "Katie showing off her new earrings.",
         "lat": 37.80585,
         "lng": -122.41964722222222,
         "width": 3024,
         "height": 4032,
-        "checksum": "c5e4804697e93efbda5ccaf0cb3de952"
+        "checksum": "220ad1aafdcb6ab8354df74377a5ddc7"
     },
     {
         "file": "IMG_1641.jpg",
         "date": "2018-12-17T01:03:38.000Z",
+        "description": "Love train.",
         "lat": 37.84598888888889,
         "lng": -122.26555555555555,
         "width": 4032,
         "height": 3024,
-        "checksum": "0db5f27774ea998358dce15c72d2ce03"
+        "checksum": "b3474bb49b09428948be744e3460779c"
     },
     {
         "file": "IMG_1339.jpg",
         "date": "2018-11-14T22:27:07.000Z",
-        "description": "Zeus observing katie.",
+        "description": "Zeus observing Katie.",
         "lat": 35.67765,
         "lng": -105.93007777777778,
         "width": 4032,
         "height": 3024,
-        "checksum": "48eb194c2e157c15ee351fbaafb22104"
+        "checksum": "6a0c378b9f9866497aaae8083643aafb"
     },
     {
         "file": "IMG_1633.jpg",
         "date": "2018-12-16T19:26:53.000Z",
+        "description": "Two headed for the Edwardian Ball.",
         "lat": 37.72510277777778,
         "lng": -122.43085555555557,
         "width": 3024,
         "height": 4032,
-        "checksum": "a2aacbd75908f04bd704f0cf3ed76f9e"
+        "checksum": "a61fe205ad4d547a2038a072536550b8"
     },
     {
         "file": "IMG_1965.jpg",
@@ -451,5 +454,661 @@
         "width": 3024,
         "height": 4032,
         "checksum": "d7c483af1b103df2f466d8feddd9d143"
+    },
+    {
+        "file": "IMG_0523.jpg",
+        "date": "2019-02-01T00:59:09.000Z",
+        "lat": 35.70960277777778,
+        "lng": -105.93203055555556,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "ae5dcfe9be2bcc58dda6a423cc387aac"
+    },
+    {
+        "file": "57177113007__01E127A4-A7B6-4739-80C9-487F902AB634.jpg",
+        "date": "2019-02-13T19:18:50.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "e47e6e144833fb5ce27fa07ec9e9920d"
+    },
+    {
+        "file": "IMG_2275.jpg",
+        "date": "2019-02-13T02:16:05.000Z",
+        "description": "Two cars, two bikes.",
+        "lat": 30.375969444444443,
+        "lng": -98.11999444444444,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "62e080321d32b434db361b99d2c94418"
+    },
+    {
+        "file": "IMG_2278.jpg",
+        "date": "2019-02-13T19:18:36.000Z",
+        "lat": 30.25617777777778,
+        "lng": -97.72231388888889,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "484e04b120cdafe1345fb4f84cf77487"
+    },
+    {
+        "file": "IMG_2274.jpg",
+        "date": "2019-02-13T02:02:20.000Z",
+        "description": "Tried climbing this roof and got shut down in short order.",
+        "lat": 30.37901111111111,
+        "lng": -98.11325833333333,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "86d128e548f81cb524c99750e76748bc"
+    },
+    {
+        "file": "IMG_2272.jpg",
+        "date": "2019-02-12T22:18:16.000Z",
+        "lat": 30.377533333333332,
+        "lng": -98.11724722222222,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "7b17e997fd51bdc41a66e44448182d24"
+    },
+    {
+        "file": "IMG_2268.jpg",
+        "date": "2019-02-12T21:29:32.000Z",
+        "lat": 30.376197222222224,
+        "lng": -98.12034722222222,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "ed8694371f525f9e16ef17bc49c0a502"
+    },
+    {
+        "file": "IMG_2261.jpg",
+        "date": "2019-02-10T23:05:52.000Z",
+        "lat": 29.179644444444445,
+        "lng": -102.995675,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "9ceef391b9434eb6861bd2f511d6622a"
+    },
+    {
+        "file": "IMG_2238.jpg",
+        "date": "2019-02-10T04:00:09.000Z",
+        "lat": 29.100461111111112,
+        "lng": -103.18000833333333,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "fcef7f6e0df16a01a741b01b81da7be5"
+    },
+    {
+        "file": "IMG_2249.jpg",
+        "date": "2019-02-10T06:21:18.000Z",
+        "lat": 29.100558333333336,
+        "lng": -103.1802138888889,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "d17e7a03ab2144aec69959ca2232f0ec"
+    },
+    {
+        "file": "IMG_2236.jpg",
+        "date": "2019-02-10T03:59:11.000Z",
+        "lat": 29.100483333333333,
+        "lng": -103.18002222222222,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "84083f60cc1145cad15bb4ca05daa39c"
+    },
+    {
+        "file": "IMG_2263.jpg",
+        "date": "2019-02-10T23:08:30.000Z",
+        "lat": 29.1783,
+        "lng": -102.9970388888889,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "300c0470a97d704ff4b11ed8fe586be3"
+    },
+    {
+        "file": "IMG_2227.jpg",
+        "date": "2019-02-10T03:34:12.000Z",
+        "lat": 29.100486111111113,
+        "lng": -103.18007777777778,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "f3d30e2a7b111a793300c1efb124bba4"
+    },
+    {
+        "file": "IMG_2226.jpg",
+        "date": "2019-02-10T02:43:28.000Z",
+        "description": "A really standout sunset.",
+        "lat": 29.100422222222225,
+        "lng": -103.17997777777778,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "089555c2028d5d94f6e68e947f221b33"
+    },
+    {
+        "file": "IMG_2211.jpg",
+        "date": "2019-02-10T02:06:08.000Z",
+        "lat": 29.09840277777778,
+        "lng": -103.18348055555556,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "6af86a6102ee0f97b529404e759d590f"
+    },
+    {
+        "file": "IMG_2215.jpg",
+        "date": "2019-02-10T02:07:58.000Z",
+        "lat": 29.09872222222222,
+        "lng": -103.18361666666667,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "30312c884d5340967527db0803da7dad"
+    },
+    {
+        "file": "IMG_2206.jpg",
+        "date": "2019-02-10T01:49:40.000Z",
+        "lat": 29.095188888888888,
+        "lng": -103.18803333333334,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "9634193e0d1312234572bee5a45ccfca"
+    },
+    {
+        "file": "IMG_2197.jpg",
+        "date": "2019-02-10T01:37:20.000Z",
+        "lat": 29.096144444444445,
+        "lng": -103.19000277777778,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "736796f2f2540f86e110b108ed91982e"
+    },
+    {
+        "file": "IMG_2205.jpg",
+        "date": "2019-02-10T01:41:07.000Z",
+        "lat": 29.096272222222222,
+        "lng": -103.19004722222222,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "a03e321e76a2b912af7785943a7cb462"
+    },
+    {
+        "file": "IMG_2194.jpg",
+        "date": "2019-02-10T00:53:15.000Z",
+        "lat": 29.09519722222222,
+        "lng": -103.18930833333334,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "1fb1b08319439f1ac4906c1c2534e0f7"
+    },
+    {
+        "file": "IMG_2184.jpg",
+        "date": "2019-02-10T00:17:24.000Z",
+        "lat": 29.09517222222222,
+        "lng": -103.1893,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "a84d01467041b7fc7134b25a648e5982"
+    },
+    {
+        "file": "IMG_2192.jpg",
+        "date": "2019-02-10T00:52:59.000Z",
+        "lat": 29.09519722222222,
+        "lng": -103.18930833333334,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "1734eb1ed0cde5a2d166d9a857786cc5"
+    },
+    {
+        "file": "IMG_2200.jpg",
+        "date": "2019-02-10T01:40:06.000Z",
+        "lat": 29.096252777777778,
+        "lng": -103.19010277777778,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "7e5ba272cd07065561ab0ee24dc43668"
+    },
+    {
+        "file": "IMG_2154.jpg",
+        "date": "2019-02-09T19:38:46.000Z",
+        "description": "Spam, spam, spam!",
+        "lat": 29.100419444444444,
+        "lng": -103.18001666666667,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "e584dde98de660914a1578131fc133ab"
+    },
+    {
+        "file": "IMG_2156.jpg",
+        "date": "2019-02-09T21:11:32.000Z",
+        "lat": 29.099574999999998,
+        "lng": -103.18278611111111,
+        "width": 3832,
+        "height": 2874,
+        "checksum": "ff9823e1da594dea1eb1518ad8ecdb2b"
+    },
+    {
+        "file": "IMG_2150.jpg",
+        "date": "2019-02-09T19:07:34.000Z",
+        "lat": 29.10125277777778,
+        "lng": -103.17986388888889,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "978f166d949118cf1d387f6fccd1203e"
+    },
+    {
+        "file": "IMG_2143.jpg",
+        "date": "2019-02-09T02:51:40.000Z",
+        "lat": 29.100491666666667,
+        "lng": -103.18002222222222,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "2004edd61358a88664f08c1cbaf1c844"
+    },
+    {
+        "file": "IMG_2147.jpg",
+        "date": "2019-02-09T18:08:15.000Z",
+        "description": "A rough start.",
+        "lat": 29.100469444444446,
+        "lng": -103.17998611111112,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "0e3e34dcb38062e8f5e578e2c362506e"
+    },
+    {
+        "file": "IMG_2134.jpg",
+        "date": "2019-02-09T02:28:26.000Z",
+        "lat": 29.100447222222222,
+        "lng": -103.18006944444446,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "6fcd25f0435bf8665ff0ade6ff0c98c7"
+    },
+    {
+        "file": "IMG_2171.jpg",
+        "date": "2019-02-09T22:06:56.000Z",
+        "lat": 29.096266666666665,
+        "lng": -103.18928611111112,
+        "width": 11826,
+        "height": 3808,
+        "checksum": "0ebfe08b15eecdba82aa7ca4749ee9a8"
+    },
+    {
+        "file": "IMG_2118.jpg",
+        "date": "2019-02-08T21:05:52.000Z",
+        "lat": 29.321605555555557,
+        "lng": -103.61583055555555,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "5fc8c05223737fb50386c45de7d3d442"
+    },
+    {
+        "file": "IMG_2119.jpg",
+        "date": "2019-02-08T21:05:54.000Z",
+        "lat": 29.321641666666668,
+        "lng": -103.61583055555555,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "fd56960c4d3e58c5a5d07f8e3fbc0292"
+    },
+    {
+        "file": "IMG_2106.jpg",
+        "date": "2019-02-08T01:59:35.000Z",
+        "lat": 29.165527777777775,
+        "lng": -103.61170277777777,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "1b8a1447cfeb74aa25ffe941e804d9e9"
+    },
+    {
+        "file": "IMG_2102.jpg",
+        "date": "2019-02-08T01:59:22.000Z",
+        "lat": 29.165244444444443,
+        "lng": -103.61185555555555,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "7c5691d1ed33870238ece03e1f700f91"
+    },
+    {
+        "file": "IMG_2113.jpg",
+        "date": "2019-02-08T21:01:50.000Z",
+        "lat": 29.321744444444445,
+        "lng": -103.6158,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "385fde07658ee0ef3359d40d503b26fb"
+    },
+    {
+        "file": "IMG_2104.jpg",
+        "date": "2019-02-08T01:59:26.000Z",
+        "lat": 29.165669444444443,
+        "lng": -103.61164166666666,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "e78da3a00f6fb2823973312ec358e478"
+    },
+    {
+        "file": "IMG_2087.jpg",
+        "date": "2019-02-06T00:47:20.000Z",
+        "lat": 32.82126666666667,
+        "lng": -106.27722222222222,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "96e4c0740c5f39242279b4e2b034fea9"
+    },
+    {
+        "file": "IMG_2098.jpg",
+        "date": "2019-02-07T23:42:19.000Z",
+        "lat": 29.325558333333333,
+        "lng": -103.5484861111111,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "acbfd43b8c5cb30a9b55cf8d40cbe40b"
+    },
+    {
+        "file": "IMG_2086.jpg",
+        "date": "2019-02-06T00:47:02.000Z",
+        "lat": 32.82126666666667,
+        "lng": -106.27723611111111,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "3cabc862ba7821fd84c34cdc4a46a5d5"
+    },
+    {
+        "file": "IMG_2097.jpg",
+        "date": "2019-02-07T23:26:01.000Z",
+        "lat": 29.321516666666668,
+        "lng": -103.61597499999999,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "07b64936563421ccd68ea1b7c89b69af"
+    },
+    {
+        "file": "IMG_2100.jpg",
+        "date": "2019-02-07T23:42:24.000Z",
+        "lat": 29.325480555555554,
+        "lng": -103.54844722222222,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "0c544da4c1b96b66ca675aafaae5441f"
+    },
+    {
+        "file": "IMG_2081.jpg",
+        "date": "2019-02-06T00:45:50.000Z",
+        "lat": 32.82125555555556,
+        "lng": -106.27726111111112,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "5ab6c05dc1734b494faee8e4f6441e52"
+    },
+    {
+        "file": "IMG_2076.jpg",
+        "date": "2019-02-06T00:10:15.000Z",
+        "lat": 32.820725,
+        "lng": -106.27684722222222,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "da4ee5de59ef54494602909f55908576"
+    },
+    {
+        "file": "IMG_2070.jpg",
+        "date": "2019-02-05T22:57:41.000Z",
+        "lat": 32.822388888888895,
+        "lng": -106.27285,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "865c591beb36088286851c6536140fb9"
+    },
+    {
+        "file": "IMG_2067.jpg",
+        "date": "2019-02-05T19:42:35.000Z",
+        "description": "Space monkey.",
+        "lat": 33.48405833333334,
+        "lng": -106.0963361111111,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "9fe54d8e513d8e7219b0fb3c5e82efb2"
+    },
+    {
+        "file": "IMG_2063.jpg",
+        "date": "2019-02-05T14:52:40.000Z",
+        "lat": 33.804961111111105,
+        "lng": -106.88433055555556,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "81719083c540ee97612b3ad8889333a5"
+    },
+    {
+        "file": "IMG_2057.jpg",
+        "date": "2019-02-05T14:47:50.000Z",
+        "lat": 33.80486666666666,
+        "lng": -106.88434722222223,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "8ffd1cb3c226aa4dda8d300f83a5e694"
+    },
+    {
+        "file": "IMG_2059.jpg",
+        "date": "2019-02-05T14:48:56.000Z",
+        "lat": 33.80494722222222,
+        "lng": -106.88434722222223,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "905510c0f114ed309ea9ffa8b8b69971"
+    },
+    {
+        "file": "IMG_2055.jpg",
+        "date": "2019-02-05T14:47:46.000Z",
+        "lat": 33.80486666666666,
+        "lng": -106.88434722222223,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "9dfaa68e9e6aa046d9a9e22d5d15cc70"
+    },
+    {
+        "file": "IMG_2054.jpg",
+        "date": "2019-02-05T14:46:18.000Z",
+        "lat": 33.80486666666666,
+        "lng": -106.88430000000001,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "04de459b320648b446e623690959f232"
+    },
+    {
+        "file": "IMG_2051.jpg",
+        "date": "2019-02-05T14:45:54.000Z",
+        "lat": 33.804919444444444,
+        "lng": -106.88429166666667,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "9fa040d2e88af3c291f3546109a1a0cb"
+    },
+    {
+        "file": "IMG_2044.jpg",
+        "date": "2019-02-05T14:40:32.000Z",
+        "lat": 33.80493611111111,
+        "lng": -106.88425555555557,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "a081289efb4c4af29059e8fb31c73dd0"
+    },
+    {
+        "file": "IMG_2062.jpg",
+        "date": "2019-02-05T14:52:32.000Z",
+        "lat": 33.804961111111105,
+        "lng": -106.88437777777779,
+        "width": 12662,
+        "height": 3850,
+        "checksum": "900a8622b7d0c090d28a3e90cd714677"
+    },
+    {
+        "file": "IMG_1997.jpg",
+        "date": "2019-02-02T22:29:30.000Z",
+        "lat": 35.85418333333333,
+        "lng": -106.14770555555556,
+        "width": 3088,
+        "height": 2320,
+        "checksum": "797e991e169b7a7265cd3c53c402b101"
+    },
+    {
+        "file": "IMG_1991.jpg",
+        "date": "2019-02-02T22:26:43.000Z",
+        "lat": 35.85413333333334,
+        "lng": -106.1477138888889,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "920969fbe34369618b1bc1c042bf27a8"
+    },
+    {
+        "file": "IMG_1980.jpg",
+        "date": "2019-02-01T02:27:38.000Z",
+        "lat": 35.709652777777784,
+        "lng": -105.93213611111112,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "2a28bc94b668a1216d69735d8d8af047"
+    },
+    {
+        "file": "IMG_1982.jpg",
+        "date": "2019-02-01T05:19:54.000Z",
+        "lat": 35.677594444444445,
+        "lng": -105.92982500000001,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "912809d16f42f44ccb114c41c4084cb6"
+    },
+    {
+        "file": "IMG_0653.jpg",
+        "date": "2019-02-13T18:56:36.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "a638a04cd381e14700307fe875841c0d"
+    },
+    {
+        "file": "IMG_0637.jpg",
+        "date": "2019-02-13T00:37:55.000Z",
+        "description": "Summer sausage and cheese snack to keep us climbing.",
+        "lat": null,
+        "lng": null,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "79854593cfa5f17e934a644ca3e4f917"
+    },
+    {
+        "file": "IMG_0633.jpg",
+        "date": "2019-02-12T21:11:21.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "90ac521b8cf01e0cdce3c21da4df18ef"
+    },
+    {
+        "file": "IMG_0632.jpg",
+        "date": "2019-02-09T21:16:56.000Z",
+        "description": "But did you look at it?",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "4e31aa5cbb4eb3e20f3f3395dcc47151"
+    },
+    {
+        "file": "IMG_0628.jpg",
+        "date": "2019-02-09T20:06:27.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "a2d8c6679053dd0b54822bc6ca89420c"
+    },
+    {
+        "file": "IMG_0621.jpg",
+        "date": "2019-02-08T02:43:40.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "d5f9824f4fc45aa3c05eef571412f027"
+    },
+    {
+        "file": "IMG_0619.jpg",
+        "date": "2019-02-08T02:43:14.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "92f712ab1200118f63ed3e173898e81c"
+    },
+    {
+        "file": "IMG_0606.jpg",
+        "date": "2019-02-07T03:14:27.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "329d68c5db7396f3659b67e7782097b0"
+    },
+    {
+        "file": "IMG_0616.jpg",
+        "date": "2019-02-08T02:04:11.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "7461aeab37cf3317e6278c6f449acf34"
+    },
+    {
+        "file": "IMG_0607.jpg",
+        "date": "2019-02-07T22:37:05.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "56575622526ac624fc8d48b05425b0b9"
+    },
+    {
+        "file": "IMG_0591.jpg",
+        "date": "2019-02-06T17:22:15.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "cfbb4f5249841e39d05c30f31cc4f1f5"
+    },
+    {
+        "file": "IMG_0604.jpg",
+        "date": "2019-02-07T03:14:01.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "bdacd71ef8610c13b4e1ba19b9773be8"
+    },
+    {
+        "file": "IMG_0580.jpg",
+        "date": "2019-02-06T00:10:40.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "d5690165bc0324a8c08772293d80e647"
+    },
+    {
+        "file": "IMG_0583.jpg",
+        "date": "2019-02-06T00:15:44.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "11ed941591067733f2d186d88347e971"
+    },
+    {
+        "file": "IMG_0574.jpg",
+        "date": "2019-02-05T19:00:10.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "6e26125a6ab035f7b0fe387da9b27591"
     }
 ]
