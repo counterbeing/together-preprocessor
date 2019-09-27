@@ -73,7 +73,7 @@ My story goes here!
   const filename = kebabCase(
     moment(o.start_date).format("YYYY-MM-DD") + o.title
   )
-  fs.writeFile(`stories/${filename}.md`, "Hello content!", function(err) {
+  fs.writeFile(`stories/${filename}.md`, file, function(err) {
     if (err) throw err
     console.log("Saved!")
   })
