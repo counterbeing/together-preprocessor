@@ -40,13 +40,6 @@ export default async function() {
     const photos = allPhotos.filter(p =>
       isWithinInterval(p.date, { start: e.startDate, end: e.endDate })
     )
-    const photosWithLocation = photos.filter(p => p.lat)
-    const lat =
-      photosWithLocation.reduce((a, e) => a + e.lat, 0) /
-      photosWithLocation.length
-    const lng =
-      photosWithLocation.reduce((a, e) => a + e.lng, 0) /
-      photosWithLocation.length
     const id = kebabCase(e.title + moment(e.startDate).format("YYYY-MM-DD"))
     const place = await geocoder(e.location)
 
@@ -96,6 +89,7 @@ export default async function() {
     }
   })
   uploadJSON(JSON.stringify(overviewIndex), "storiesIndex.json")
+  uploadJSON(JSON.stringify(allPhotos), "photosIndex.json")
 }
 
 async function sitemap() {
