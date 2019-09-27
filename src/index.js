@@ -35,12 +35,18 @@ async function run() {
       })
 
       if (alreadyExists) {
-        // TODO: update caption and location, or totally replace
         process.stdout.write(`S`)
         fs.unlink(p)
         return
       } else {
-        photoIndex.push(meta)
+        const i = photoIndex.findIndex(obj => {
+          return obj.file == meta.file && obj.date == meta.date.toISOString()
+        })
+        if (i == -1) {
+          photoIndex.push(meta)
+        } else {
+          photoIndex[i] = meta
+        }
       }
 
       const processedPhotoPromises = generateOutputFiles(
