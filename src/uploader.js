@@ -9,7 +9,7 @@ AWS.config.update({
   region: process.env.REGION
 })
 
-export default async function(bufferPromise, filename) {
+const uploadWebp = async function(bufferPromise, filename) {
   process.stdout.write("U")
   let buffer = await bufferPromise
   var s3 = new AWS.S3({ apiVersion: "2006-03-01" })
@@ -21,3 +21,16 @@ export default async function(bufferPromise, filename) {
   }
   return s3.upload(params).promise()
 }
+
+const uploadJSON = async function(file, filename) {
+  var s3 = new AWS.S3({ apiVersion: "2006-03-01" })
+  var params = {
+    Bucket: process.env.BUCKET,
+    Key: filename,
+    Body: file,
+    ContentType: "application/json"
+  }
+  return s3.upload(params).promise()
+}
+
+export { uploadWebp, uploadJSON }

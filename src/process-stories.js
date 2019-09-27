@@ -5,6 +5,7 @@ import fs from "fs-extra"
 import { kebabCase, every } from "lodash"
 import moment from "moment"
 import { geocoder } from "./geocoder.js"
+import { uploadJSON } from "./uploader.js"
 
 const yamlFront = require("yaml-front-matter")
 
@@ -26,7 +27,7 @@ const processMarkdown = md => {
   return converter.makeHtml(md)
 }
 
-async function renderStories() {
+export default async function() {
   const paths = await globby(["stories/*.md"])
   let stories = paths.map(path => parseStoryFile(path))
   const allPhotos = JSON.parse(fs.readFileSync("index.json")).map(p => {
@@ -83,10 +84,19 @@ async function renderStories() {
     return { ...story, photos }
   })
 
-  await fs.writeFile("./stories.json", JSON.stringify(stories), () => {})
+  const overviewIndex = stories.map(s => {
+    uploadJSON(JSON.stringify(s), s.id + ".json")
+    return {
+      id: s.id,
+      title: s.title,
+      location: s.location,
+      startDate: s.startDate,
+      lat: s.lat,
+      lng: s.lng
+    }
+  })
+  uploadJSON(JSON.stringify(overviewIndex), "storiesIndex.json")
 }
-
-renderStories()
 
 async function sitemap() {
   const stories = fs.readJsonSync("./stories.json")
