@@ -12,6 +12,7 @@
   "dependencies": {
     "@babel/core": "^7.6.2",
     "@babel/node": "^7.6.2",
+    "aws-sdk": "^2.537.0",
     "bluebird": "^3.5.5",
     "chalk": "^2.4.2",
     "date-fns": "^2.3.0",

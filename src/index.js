@@ -3,12 +3,13 @@ import fs from "fs-extra"
 import globby from "globby"
 import Promise from "bluebird"
 import sharp from "sharp"
-import { basename } from "path"
+import { basename, extname } from "path"
+import upload from "./uploader.js"
 
 let photoIndex = fs.readJsonSync("./index.json")
 
 function generateOutputFiles(sizes, filename, format) {
-  const base = basename(filename)
+  const base = basename(filename, extname(filename))
   return sizes.map(size => {
     return {
       width: size,
@@ -44,12 +45,20 @@ async function run() {
         [1600, 1200, 700, 250],
         meta.file,
         "webp"
-      ).map(obj => {
-        return sharp(buffer)
-          .resize({ width: obj.width })
-          .webp({ quality: 85, reductionEffort: 6 })
-          .toFile(obj.filename)
-      })
+      )
+        .map(obj => {
+          return {
+            filename: obj.filename,
+            buffer: sharp(buffer)
+              .resize({ width: obj.width })
+              .webp({ quality: 85, reductionEffort: 6 })
+              .toBuffer()
+          }
+        })
+        .map(p => {
+          return upload(p.buffer, p.filename)
+        })
+      // console.log(processedPhotoPromises)
       let processedPhotos = await Promise.all(processedPhotoPromises)
     },
     { concurrency: 5 }
