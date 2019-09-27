@@ -9,6 +9,7 @@ const dateFormat = "YYYY:MM:DD HH:mm:ss"
 async function getPhotoMetadata(filename, buffer) {
   let promise
   return new Promise(resolve => {
+    process.stdout.write("G")
     let checksum = md5(buffer)
     new ExifImage({ image: buffer }, function(error, exifData) {
       let dec

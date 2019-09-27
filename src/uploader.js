@@ -10,6 +10,7 @@ AWS.config.update({
 })
 
 export default async function(bufferPromise, filename) {
+  process.stdout.write("U")
   let buffer = await bufferPromise
   var s3 = new AWS.S3({ apiVersion: "2006-03-01" })
   var params = {

@@ -1,5 +1,42 @@
 [
     {
+        "file": "IMG_0492.jpg",
+        "date": "2019-01-26T00:10:55.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "ea9787e033bbf2b2ed0ae79ffb8cfc4f"
+    },
+    {
+        "file": "IMG_1266.jpg",
+        "date": "2018-10-27T23:54:19.000Z",
+        "lat": null,
+        "lng": null,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "20dc5f4de3ca001a345c9b350f37e93d"
+    },
+    {
+        "file": "IMG_1260.jpg",
+        "date": "2018-10-27T20:32:07.000Z",
+        "description": "The road back from the Chama.",
+        "lat": 36.36499722222222,
+        "lng": -106.67707777777778,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "8ca87eda2984dd730c8540274954b015"
+    },
+    {
+        "file": "IMG_1257.jpg",
+        "date": "2018-10-27T18:24:09.000Z",
+        "lat": 35.887008333333334,
+        "lng": -106.01844722222222,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "b9b593f5032bbfaacf78bfc065a1d93a"
+    },
+    {
         "file": "IMG_0487.jpg",
         "date": "2019-01-24T21:07:18.000Z",
         "lat": null,
@@ -7,5 +44,87 @@
         "width": 3024,
         "height": 4032,
         "checksum": "afba73c785a917b74dedbc76fecb03f3"
+    },
+    {
+        "file": "IMG_1297.jpg",
+        "date": "2018-10-31T20:16:43.000Z",
+        "lat": 35.677699999999994,
+        "lng": -105.92992500000001,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "1cdd8b803ebc4f71fbeb4cb90967222c"
+    },
+    {
+        "file": "IMG_1288.jpg",
+        "date": "2018-10-29T02:12:42.000Z",
+        "lat": 35.677566666666664,
+        "lng": -105.92989444444444,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "67abec0a7c9f7de63bd0a0b41fb688b4"
+    },
+    {
+        "file": "IMG_1285.jpg",
+        "date": "2018-10-29T00:56:38.000Z",
+        "lat": 35.67981666666667,
+        "lng": -105.97283888888889,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "6e4a02103e503eaf05f602f9af6e43c9"
+    },
+    {
+        "file": "IMG_1274.jpg",
+        "date": "2018-10-28T00:00:16.000Z",
+        "description": "The Chama.",
+        "lat": 36.351422222222226,
+        "lng": -106.67244722222223,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "2bdd48148e9de1c23a3323b26d6a67a2"
+    },
+    {
+        "file": "IMG_1268.jpg",
+        "date": "2018-10-27T23:54:23.000Z",
+        "lat": 36.350436111111115,
+        "lng": -106.67315555555557,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "dd0bbb61a8bb1fe90280bb0dd6586a25"
+    },
+    {
+        "file": "IMG_1636.jpg",
+        "date": "2018-12-16T21:20:13.000Z",
+        "lat": 37.80585,
+        "lng": -122.41964722222222,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "c5e4804697e93efbda5ccaf0cb3de952"
+    },
+    {
+        "file": "IMG_1641.jpg",
+        "date": "2018-12-17T01:03:38.000Z",
+        "lat": 37.84598888888889,
+        "lng": -122.26555555555555,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "0db5f27774ea998358dce15c72d2ce03"
+    },
+    {
+        "file": "IMG_1339.jpg",
+        "date": "2018-11-14T22:27:07.000Z",
+        "lat": 35.67765,
+        "lng": -105.93007777777778,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "b9ca67890a2a7229efc7cb44c6143de9"
+    },
+    {
+        "file": "IMG_1633.jpg",
+        "date": "2018-12-16T19:26:53.000Z",
+        "lat": 37.72510277777778,
+        "lng": -122.43085555555557,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "a2aacbd75908f04bd704f0cf3ed76f9e"
     }
 ]

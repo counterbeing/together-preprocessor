@@ -13,15 +13,15 @@ function generateOutputFiles(sizes, filename, format) {
   return sizes.map(size => {
     return {
       width: size,
-      filename: `tmp/${base}-w${size}.${format}`
+      filename: `${base}-w${size}.${format}`
     }
   })
 }
 
 async function run() {
-  const paths = await globby(["photos/originals/*.{jpg,JPG}"])
+  const paths = await globby(["photos/*.{jpg,JPG}"])
 
-  Promise.map(
+  const job = Promise.map(
     paths,
     async function(p) {
       const buffer = await fs.readFile(p)
@@ -35,40 +35,53 @@ async function run() {
 
       if (alreadyExists) {
         // TODO: update caption and location, or totally replace
-        console.log(`skipping because it exists ${p}`)
+        process.stdout.write(`S`)
         return
       } else {
         photoIndex.push(meta)
       }
 
       const processedPhotoPromises = generateOutputFiles(
-        [1600, 1200, 700, 250],
+        [2100, 1600, 1200, 700, 250],
         meta.file,
         "webp"
       )
         .map(obj => {
+          process.stdout.write("P")
           return {
-            filename: obj.filename,
+            filename: basename(obj.filename),
             buffer: sharp(buffer)
               .resize({ width: obj.width })
               .webp({ quality: 85, reductionEffort: 6 })
               .toBuffer()
           }
         })
+        .concat([
+          {
+            filename: `${basename(meta.file, extname(meta.file))}-wFull.webp`,
+            buffer: sharp(buffer)
+              .webp({ quality: 85, reductionEffort: 6 })
+              .toBuffer()
+          }
+        ])
         .map(p => {
           return upload(p.buffer, p.filename)
         })
-      // console.log(processedPhotoPromises)
       let processedPhotos = await Promise.all(processedPhotoPromises)
+      return meta
     },
     { concurrency: 5 }
   )
 
-  // let results = await Promise.all(promises)
-  // await fs.writeFile('./index.json', JSON.stringify(results,  null, 4), () => {})
+  let j = await job.filter(Boolean)
+  await fs.writeFile(
+    "./index.json",
+    JSON.stringify(photoIndex, null, 4),
+    () => {}
+  )
 }
 
-run().then(data => {})
+run()
 
 // file: 'IMG_0487.jpg',
 // date: 2019-01-24T21:07:18.000Z,
