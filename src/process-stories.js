@@ -48,7 +48,7 @@ export default async function() {
   })
   stories = await Promise.all(stories)
 
-  // links for previous and next ids
+  // Build links for previous and next ids
   stories = stories.map((e, i) => {
     let next = stories[i + 1]
     next = next ? next : {}
@@ -57,6 +57,9 @@ export default async function() {
     return { ...e, previousId: previous.id, nextId: next.id }
   })
 
+  // Stories can be nested within bigger stories, for example, we might be
+  // staying somehwere, but go on a day trip. If the day trip itself warrants a
+  // story, those photos should not be included in the longer stay.
   stories = stories.map((story, i) => {
     const overlaps = stories.filter(s => {
       return (
@@ -66,14 +69,18 @@ export default async function() {
         }) && s.id !== story.id
       )
     })
-    const photos = story.photos.filter(photo => {
-      return every(overlaps, overlap => {
-        return !isWithinInterval(photo.date, {
-          start: overlap.startDate,
-          end: overlap.endDate
+    const photos = story.photos
+      .filter(photo => {
+        return every(overlaps, overlap => {
+          return !isWithinInterval(photo.date, {
+            start: overlap.startDate,
+            end: overlap.endDate
+          })
         })
       })
-    })
+      .sort((b, a) => {
+        return new Date(b.date) - new Date(a.date)
+      })
     return { ...story, photos }
   })
 
