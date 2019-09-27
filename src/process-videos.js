@@ -12,7 +12,7 @@ async function getData() {
   return metadata
 }
 
-async function run(filename, buffer = null) {
+export default async function(filename, buffer = null) {
   if (!buffer) {
     buffer = await fs.readFile(filename)
   }
@@ -25,6 +25,5 @@ async function run(filename, buffer = null) {
     description: data.Description,
     checksum
   }
-  console.log(out)
+  return out
 }
-run("./photos/IMG_0595.m4v")

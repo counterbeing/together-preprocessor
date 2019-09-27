@@ -9,7 +9,13 @@
   "scripts": {
     "process": "babel-node src/index.js",
     "add-story": "babel-node src/add-story.js",
-    "vid": "babel-node src/process-videos.js"
+    "vid": "babel-node src/process-videos.js",
+    "test": "mocha --require @babel/register"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   },
   "dependencies": {
     "@babel/core": "^7.6.2",
@@ -39,6 +45,9 @@
     "@babel/cli": "^7.6.2",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.2",
+    "@babel/register": "^7.6.2",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
     "prettier": "^1.18.2"
   }
 }
