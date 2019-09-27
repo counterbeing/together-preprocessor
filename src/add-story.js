@@ -65,7 +65,7 @@ const run = async () => {
   }
 
   const yamlString = YAML.stringify(o)
-  const file = `
+  const file = `---
 ${yamlString}
 ---
 My story goes here!
