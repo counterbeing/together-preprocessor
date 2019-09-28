@@ -33,4 +33,15 @@ const uploadJSON = async function(file, filename) {
   return s3.upload(params).promise()
 }
 
-export { uploadWebp, uploadJSON }
+const uploadM4v = async function(file, filename) {
+  var s3 = new AWS.S3({ apiVersion: "2006-03-01" })
+  var params = {
+    Bucket: process.env.BUCKET,
+    Key: filename,
+    Body: file,
+    ContentType: "video/x-m4v"
+  }
+  return s3.upload(params).promise()
+}
+
+export { uploadWebp, uploadJSON, uploadM4v }

@@ -1,4 +1,4 @@
-import getPhotoMetadata from "./getPhotoMetadata.js"
+import getMediaMetadata from "./get-media-metadata.js"
 import fs from "fs-extra"
 import globby from "globby"
 import Promise from "bluebird"
@@ -26,7 +26,7 @@ export default async function() {
     async function(p) {
       process.stdout.write("-")
       const buffer = await fs.readFile(p)
-      const meta = await getPhotoMetadata(p, buffer)
+      const meta = await getMediaMetadata(p, buffer)
       const alreadyExists = photoIndex.some(photoFromIndex => {
         return (
           photoFromIndex.checksum == meta.checksum &&

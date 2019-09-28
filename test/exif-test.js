@@ -1,12 +1,12 @@
 import "regenerator-runtime/runtime"
 import { expect } from "chai"
-import pv from "../src/process-videos.js"
+import gmm from "../src/get-media-metadata.js"
 
 describe("Processing videos", function() {
   it("should return expected data", async function() {
     const expectedMeta = {
       file: "IMG_5555.m4v",
-      date: "2019:09:27 14:43:30-07:00",
+      date: "2019-09-27T21:43:30.000Z",
       description: "Watch fingers wiggle.",
       lat: 47.684888888888885,
       lng: -122.37798888888888,
@@ -15,7 +15,7 @@ describe("Processing videos", function() {
       checksum: "11d58315e6833117a52b33be6319bcaf"
     }
 
-    const result = await pv("./test/fixtures/IMG_5555.m4v")
+    const result = await gmm("./test/fixtures/IMG_5555.m4v")
     expect(result).to.eql(expectedMeta)
   })
 })
@@ -24,7 +24,7 @@ describe("Processing images", function() {
   it("should return expected data", async function() {
     const expectedMeta = {
       file: "IMG_5553.jpg",
-      date: "2019:09:25 17:14:08",
+      date: "2019-09-26T00:14:08.000Z",
       description:
         "Apparently these make your tongue numb if you lick them. Katie made me do it.",
       lat: 47.484233333333336,
@@ -34,7 +34,7 @@ describe("Processing images", function() {
       checksum: "eba352d64d3e6582daed47381671ff55"
     }
 
-    const result = await pv("./test/fixtures/IMG_5553.jpg")
+    const result = await gmm("./test/fixtures/IMG_5553.jpg")
     expect(result).to.eql(expectedMeta)
   })
 })
