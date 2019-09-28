@@ -4504,5 +4504,22 @@
         "width": 3024,
         "height": 4032,
         "checksum": "eeaac161b9ce1adf0904441f4fb16611"
+    },
+    {
+        "file": "IMG_0595.m4v",
+        "date": "2019-02-06T21:51:26.000Z",
+        "description": "It's windy out there!",
+        "width": 1920,
+        "height": 1080,
+        "checksum": "1ff9371f1848ffa7144ad57a8f07eea1"
+    },
+    {
+        "file": "IMG_4164.m4v",
+        "date": "2019-07-25T01:48:40.000Z",
+        "lat": 48.5056,
+        "lng": -122.6624,
+        "width": 1280,
+        "height": 720,
+        "checksum": "e2517c86655acf148af5ba716be7755a"
     }
 ]

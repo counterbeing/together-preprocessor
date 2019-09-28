@@ -6,8 +6,7 @@ import { kebabCase, every } from "lodash"
 import moment from "moment"
 import { geocoder } from "./geocoder.js"
 import { uploadJSON } from "./uploader.js"
-import yamlFront from "yaml-front-matter"
-// const yamlFront = require("yaml-front-matter")
+const yamlFront = require("yaml-front-matter")
 
 const parseStoryFile = async file => {
   const contents = fs.readFileSync(file)
