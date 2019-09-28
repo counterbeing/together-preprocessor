@@ -6,11 +6,16 @@ import exiftool from "node-exiftool"
 import exiftoolBin from "dist-exiftool"
 import moment from "moment"
 const ep = new exiftool.ExiftoolProcess(exiftoolBin)
+let epIsOpen = false
 
 async function getData(file) {
-  await ep.open()
+  if (epIsOpen == false) {
+    await ep.open()
+    epIsOpen = true
+  }
+
   const metadata = await ep.readMetadata(file)
-  ep.close()
+  // ep.close()
   return metadata
 }
 

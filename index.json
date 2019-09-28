@@ -4521,5 +4521,46 @@
         "width": 1280,
         "height": 720,
         "checksum": "e2517c86655acf148af5ba716be7755a"
+    },
+    {
+        "file": "IMG_3797.m4v",
+        "date": "2019-07-16T21:53:40.000Z",
+        "lat": 45.57018888888889,
+        "lng": -107.4272888888889,
+        "width": 1280,
+        "height": 720,
+        "checksum": "430e704fe2e54d6c4a744a55552fb303"
+    },
+    {
+        "file": "IMG_3588.m4v",
+        "date": "2019-07-08T23:04:06.000Z",
+        "lat": 43.53498888888889,
+        "lng": -70.3183,
+        "width": 1280,
+        "height": 720,
+        "checksum": "7148ca96a0cd0ad106f10c04a86583d3"
+    },
+    {
+        "file": "IMG_0754.m4v",
+        "date": "2019-02-23T16:29:05.000Z",
+        "width": 1280,
+        "height": 720,
+        "checksum": "5ec80da476e558a599d852f490bf09e2"
+    },
+    {
+        "file": "IMG_2473.m4v",
+        "date": "2019-03-05T22:27:08.000Z",
+        "lat": 38.25878888888889,
+        "lng": -81.6927,
+        "width": 1920,
+        "height": 1080,
+        "checksum": "6b0e724a65acf20031fbd24626ee0556"
+    },
+    {
+        "file": "IMG_0567.m4v",
+        "date": "2019-02-05T13:52:55.000Z",
+        "width": 1920,
+        "height": 1080,
+        "checksum": "dee42ec2c6db12a4a02cddf2e1327dc2"
     }
 ]
