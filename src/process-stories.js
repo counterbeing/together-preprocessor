@@ -94,7 +94,9 @@ export default async function() {
       lng: s.lng
     }
   })
-  uploadJSON(JSON.stringify(overviewIndex), "storiesIndex.json")
+  const storiesIndex = JSON.stringify(overviewIndex)
+  uploadJSON(storiesIndex, "storiesIndex.json")
+  fs.writeFile("storiesIndex.json", storiesIndex)
   uploadJSON(JSON.stringify(allPhotos), "photosIndex.json")
 }
 

@@ -30,7 +30,7 @@ export default async function() {
       const alreadyExists = photoIndex.some(photoFromIndex => {
         return (
           photoFromIndex.checksum == meta.checksum &&
-          photoFromIndex.date == meta.date.toISOString()
+          photoFromIndex.date == meta.date
         )
       })
 
@@ -40,7 +40,7 @@ export default async function() {
         return
       } else {
         const i = photoIndex.findIndex(obj => {
-          return obj.file == meta.file && obj.date == meta.date.toISOString()
+          return obj.file == meta.file && obj.date == meta.date
         })
         if (i == -1) {
           photoIndex.push(meta)
