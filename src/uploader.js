@@ -41,7 +41,6 @@ const uploadM4v = async function(file, filename) {
     Body: file,
     ContentType: "video/x-m4v"
   }
-  console.log(params)
   return s3.upload(params).promise()
 }
 
