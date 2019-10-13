@@ -4,7 +4,6 @@ import { createSitemap } from "sitemap"
 export default async function() {
   console.log("Writing sitemap.")
   const stories = fs.readJsonSync("./storiesIndex.json")
-  console.log(stories)
   const urls = stories.map(story => {
     return { url: "/" + story.id + "/", changefreq: "monthly", priority: 0.7 }
   })

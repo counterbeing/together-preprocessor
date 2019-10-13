@@ -5,15 +5,15 @@ import Promise from "bluebird"
 import sharp from "sharp"
 import { basename, extname } from "path"
 import { uploadWebp } from "./uploader.js"
+import * as utils from "./utils.js"
 
 let photoIndex = fs.readJsonSync("./index.json")
 
 function generateOutputFiles(sizes, filename, format) {
-  const base = basename(filename, extname(filename))
   return sizes.map(size => {
     return {
       width: size,
-      filename: `${base}-w${size}.${format}`
+      filename: `${filename}-w${size}.${format}`
     }
   })
 }
@@ -27,26 +27,13 @@ export default async function() {
       process.stdout.write("-")
       const buffer = await fs.readFile(p)
       const meta = await getMediaMetadata(p, buffer)
-      const alreadyExists = photoIndex.some(photoFromIndex => {
-        return (
-          photoFromIndex.checksum == meta.checksum &&
-          photoFromIndex.date == meta.date
-        )
-      })
 
-      if (alreadyExists) {
+      if (utils.checkForExactCopy(photoIndex, meta)) {
         process.stdout.write(`S`)
         fs.unlink(p)
         return
       } else {
-        const i = photoIndex.findIndex(obj => {
-          return obj.file == meta.file && obj.date == meta.date
-        })
-        if (i == -1) {
-          photoIndex.push(meta)
-        } else {
-          photoIndex[i] = meta
-        }
+        utils.replaceOrAddPhoto(photoIndex, meta)
       }
 
       const processedPhotoPromises = generateOutputFiles(
@@ -66,7 +53,7 @@ export default async function() {
         })
         .concat([
           {
-            filename: `${basename(meta.file, extname(meta.file))}-wFull.webp`,
+            filename: `${meta.file}-wFull.webp`,
             buffer: sharp(buffer)
               .webp({ quality: 85, reductionEffort: 6 })
               .toBuffer()
