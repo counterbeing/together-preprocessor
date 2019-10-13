@@ -1,7 +1,5 @@
-import AWS from "aws-sdk"
+import * as AWS from "aws-sdk"
 import fs from "fs"
-import Promise from "bluebird"
-import path from "path"
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,

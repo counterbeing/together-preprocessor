@@ -1,15 +1,19 @@
 import getMediaMetadata from "./get-media-metadata.js"
-import fs from "fs-extra"
-import globby from "globby"
-import Promise from "bluebird"
-import sharp from "sharp"
-import { basename, extname } from "path"
+import * as fs from "fs-extra"
+import * as globby from "globby"
+import * as BlueBird from "bluebird"
+import * as sharp from "sharp"
+import { basename } from "path"
 import { uploadWebp } from "./uploader.js"
 import * as utils from "./utils.js"
 
 let photoIndex = fs.readJsonSync("./index.json")
 
-function generateOutputFiles(sizes, filename, format) {
+function generateOutputFiles(
+  sizes: number[],
+  filename: string,
+  format: string
+) {
   return sizes.map(size => {
     return {
       width: size,
@@ -21,7 +25,7 @@ function generateOutputFiles(sizes, filename, format) {
 export default async function() {
   const paths = await globby(["photos/*.{jpg,JPG}"])
 
-  const job = Promise.map(
+  const job = BlueBird.map(
     paths,
     async function(p) {
       process.stdout.write("-")
@@ -46,8 +50,8 @@ export default async function() {
           return {
             filename: basename(obj.filename),
             buffer: sharp(buffer)
-              .resize({ width: obj.width })
-              .webp({ quality: 85, reductionEffort: 6 })
+              .resize(obj.width)
+              .webp({ quality: 85, reductionEffort: 6 } as sharp.WebpOptions)
               .toBuffer()
           }
         })
@@ -55,27 +59,21 @@ export default async function() {
           {
             filename: `${meta.file}-wFull.webp`,
             buffer: sharp(buffer)
-              .webp({ quality: 85, reductionEffort: 6 })
+              .webp({ quality: 85, reductionEffort: 6 } as sharp.WebpOptions)
               .toBuffer()
           }
         ])
         .map(p => {
           return uploadWebp(p.buffer, p.filename)
         })
-      let processedPhotos = await Promise.all(processedPhotoPromises).then(
-        () => {
-          fs.unlink(p)
-        }
-      )
+      await BlueBird.all(processedPhotoPromises).then(() => {
+        fs.unlink(p)
+      })
       return meta
     },
     { concurrency: 10 }
   )
 
-  let j = await job.filter(Boolean)
-  await fs.writeFile(
-    "./index.json",
-    JSON.stringify(photoIndex, null, 4),
-    () => {}
-  )
+  await job.filter(Boolean)
+  fs.writeFileSync("./index.json", JSON.stringify(photoIndex, null, 4))
 }

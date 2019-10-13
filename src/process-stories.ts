@@ -1,14 +1,14 @@
-import globby from "globby"
-import { isWithinInterval, compareDesc, subSeconds } from "date-fns"
-import showdown from "showdown"
-import fs from "fs-extra"
+import * as globby from "globby"
+import { isWithinInterval, compareDesc } from "date-fns"
+import * as showdown from "showdown"
+import * as fs from "fs-extra"
 import { kebabCase, every } from "lodash"
-import moment from "moment"
+import * as moment from "moment"
 import { geocoder } from "./geocoder.js"
 import { uploadJSON } from "./uploader.js"
 const yamlFront = require("yaml-front-matter")
 
-const parseStoryFile = async file => {
+const parseStoryFile = async (file: string) => {
   const contents = fs.readFileSync(file)
   const obj = yamlFront.loadFront(contents)
   return {
@@ -21,22 +21,36 @@ const parseStoryFile = async file => {
   }
 }
 
-const processMarkdown = md => {
+const processMarkdown = (md: string) => {
   const converter = new showdown.Converter()
   return converter.makeHtml(md)
 }
 
+interface Story {
+  id: string
+  title: string
+  location: string
+  startDate: Date
+  endDate?: Date
+  lat?: number
+  lng?: number
+  photos?: any[]
+}
+
 export default async function() {
   const paths = await globby(["stories/*.md"])
-  let stories = paths.map(path => parseStoryFile(path))
-  const allPhotos = JSON.parse(fs.readFileSync("index.json")).map(p => {
+  let stories: any = paths.map(path => parseStoryFile(path))
+  let storiesJsonString: string = fs.readFileSync("index.json").toString()
+  const allPhotos = JSON.parse(storiesJsonString).map((p: any) => {
     p.date = new Date(p.date)
     return p
   })
   stories = await Promise.all(stories)
-  stories = stories.sort((t1, t2) => compareDesc(t2.startDate, t1.startDate))
-  stories = stories.map(async (e, i) => {
-    const photos = allPhotos.filter(p =>
+  stories = stories.sort((s1: Story, s2: Story) =>
+    compareDesc(s2.startDate, s1.startDate)
+  )
+  stories = stories.map(async (e: Story) => {
+    const photos = allPhotos.filter((p: any) =>
       isWithinInterval(p.date, { start: e.startDate, end: e.endDate })
     )
     const id = kebabCase(e.title + moment(e.startDate).format("YYYY-MM-DD"))
@@ -48,7 +62,7 @@ export default async function() {
   stories = await Promise.all(stories)
 
   // Build links for previous and next ids
-  stories = stories.map((e, i) => {
+  stories = stories.map((e: Story, i: number) => {
     let next = stories[i + 1]
     next = next ? next : {}
     let previous = stories[i - 1]
@@ -59,8 +73,8 @@ export default async function() {
   // Stories can be nested within bigger stories, for example, we might be
   // staying somehwere, but go on a day trip. If the day trip itself warrants a
   // story, those photos should not be included in the longer stay.
-  stories = stories.map((story, i) => {
-    const overlaps = stories.filter(s => {
+  stories = stories.map((story: Story) => {
+    const overlaps = stories.filter((s: Story) => {
       return (
         isWithinInterval(s.startDate, {
           start: story.startDate,
@@ -70,7 +84,7 @@ export default async function() {
     })
     const photos = story.photos
       .filter(photo => {
-        return every(overlaps, overlap => {
+        return every(overlaps, (overlap: Story) => {
           return !isWithinInterval(photo.date, {
             start: overlap.startDate,
             end: overlap.endDate
@@ -78,12 +92,12 @@ export default async function() {
         })
       })
       .sort((b, a) => {
-        return new Date(b.date) - new Date(a.date)
+        return +new Date(b.date) - +new Date(a.date)
       })
     return { ...story, photos }
   })
 
-  const overviewIndex = stories.map(s => {
+  const overviewIndex = stories.map((s: Story) => {
     uploadJSON(JSON.stringify(s), s.id + ".json")
     return {
       id: s.id,

@@ -7,8 +7,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "process": "babel-node src/index.js",
-    "add-story": "babel-node src/add-story.js",
+    "process": "tsc && node built/index.js",
+    "add-story": "node built/add-story.js",
     "vid": "babel-node src/process-videos.js",
     "test": "mocha --require @babel/register"
   },
@@ -40,6 +40,7 @@
     "sharp": "^0.23.0",
     "showdown": "^1.9.0",
     "sitemap": "^4.1.1",
+    "uuid-by-string": "^2.1.5",
     "yaml-front-matter": "^4.0.0",
     "yamljs": "^0.3.0"
   },
@@ -48,8 +49,16 @@
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.2",
     "@babel/register": "^7.6.2",
+    "@types/bluebird": "^3.5.27",
+    "@types/fs-extra": "^8.0.0",
+    "@types/globby": "^9.1.0",
+    "@types/lodash": "^4.14.144",
+    "@types/md5": "^2.1.33",
+    "@types/sharp": "^0.22.3",
+    "@types/showdown": "^1.9.3",
     "chai": "^4.2.0",
     "mocha": "^6.2.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.4"
   }
 }

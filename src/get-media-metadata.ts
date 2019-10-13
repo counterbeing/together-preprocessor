@@ -1,16 +1,16 @@
-import sexagesimal from "@mapbox/sexagesimal"
-import md5 from "md5"
-import fs from "fs-extra"
-import { basename, extname } from "path"
-import exiftool from "node-exiftool"
-import exiftoolBin from "dist-exiftool"
-import moment from "moment"
-import getUuid from "uuid-by-string"
+import * as sexagesimal from "@mapbox/sexagesimal"
+import * as md5 from "md5"
+import * as fs from "fs-extra"
+import { extname } from "path"
+import * as exiftool from "node-exiftool"
+import * as exiftoolBin from "dist-exiftool"
+import * as moment from "moment"
+import * as getUuid from "uuid-by-string"
 
 const ep = new exiftool.ExiftoolProcess(exiftoolBin)
 let epIsOpen = false
 
-async function getData(file) {
+async function getData(file: string) {
   if (epIsOpen == false) {
     await ep.open()
     epIsOpen = true
@@ -21,7 +21,7 @@ async function getData(file) {
   return metadata
 }
 
-function mapExtensionToContentType(file) {
+function mapExtensionToContentType(file: string) {
   let dext = extname(file).toLowerCase()
   return {
     ".jpg": "image/webp",
@@ -29,7 +29,7 @@ function mapExtensionToContentType(file) {
   }[dext]
 }
 
-export default async function(filename, buffer = null) {
+export default async function(filename: string, buffer = null) {
   if (!buffer) {
     buffer = await fs.readFile(filename)
   }
@@ -37,7 +37,7 @@ export default async function(filename, buffer = null) {
   let data = await getData(filename)
   data = data["data"][0]
 
-  let lat, lng
+  let lat: number, lng: number
   if (data.GPSLatitude && data.GPSLongitude) {
     lat = sexagesimal(data.GPSLatitude)
     lng = sexagesimal(data.GPSLongitude)

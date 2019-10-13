@@ -1,4 +1,4 @@
-import fs from "fs-extra"
+import * as fs from "fs-extra"
 import { createSitemap } from "sitemap"
 
 export default async function() {

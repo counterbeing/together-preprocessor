@@ -1,11 +1,11 @@
-import figlet from "figlet"
-import chalk from "chalk"
-import inquirer from "inquirer"
-import chrono from "chrono-node"
-import YAML from "yamljs"
+import * as figlet from "figlet"
+import * as chalk from "chalk"
+import * as inquirer from "inquirer"
+import * as chrono from "chrono-node"
+import * as YAML from "yamljs"
 import { kebabCase } from "lodash"
-import moment from "moment"
-import fs from "fs"
+import * as moment from "moment"
+import * as fs from "fs"
 
 const init = () => {
   console.log(

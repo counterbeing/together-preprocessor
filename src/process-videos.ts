@@ -1,8 +1,8 @@
-import getMediaMetadata from "./get-media-metadata.js"
-import globby from "globby"
-import { basename, extname } from "path"
+import getMediaMetadata from "./get-media-metadata"
+import * as globby from "globby"
+import { basename } from "path"
 import { uploadM4v } from "./uploader.js"
-import fs from "fs-extra"
+import * as fs from "fs-extra"
 
 let photoIndex = fs.readJsonSync("./index.json")
 
@@ -28,7 +28,7 @@ function replaceOrAddPhoto(index, photo) {
 
 export default (async function(folder) {
   const paths = await globby([`${folder}/*.{m4v,M4V}`])
-  const videoUploadPromises = await paths.map(async p => {
+  const videoUploadPromises = paths.map(async p => {
     const meta = await getMediaMetadata(p)
     const exactCopyExists = checkForExactCopy(photoIndex, meta)
     if (exactCopyExists) {
@@ -44,11 +44,6 @@ export default (async function(folder) {
     })
   })
 
-  let uploadedVideos = await Promise.all(videoUploadPromises)
-  await uploadedVideos
-  await fs.writeFile(
-    "./index.json",
-    JSON.stringify(photoIndex, null, 4),
-    () => {}
-  )
+  await Promise.all(videoUploadPromises)
+  fs.writeFileSync("./index.json", JSON.stringify(photoIndex, null, 4))
 })("photos")
