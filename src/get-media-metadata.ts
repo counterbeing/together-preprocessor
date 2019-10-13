@@ -24,7 +24,7 @@ async function getData(file: string) {
 function mapExtensionToContentType(file: string) {
   let dext = extname(file).toLowerCase()
   return {
-    ".jpg": "image/webp",
+    ".jpg": "image/jpeg",
     ".m4v": "video/x-m4v"
   }[dext]
 }

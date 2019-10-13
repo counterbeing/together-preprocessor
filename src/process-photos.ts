@@ -4,7 +4,7 @@ import * as globby from "globby"
 import * as BlueBird from "bluebird"
 import * as sharp from "sharp"
 import { basename } from "path"
-import { uploadWebp } from "./uploader.js"
+import { uploadJpeg } from "./uploader.js"
 import * as utils from "./utils.js"
 
 let photoIndex = fs.readJsonSync("./index.json")
@@ -43,7 +43,7 @@ export default async function() {
       const processedPhotoPromises = generateOutputFiles(
         [2100, 1600, 1200, 700, 250],
         meta.file,
-        "webp"
+        "jpeg"
       )
         .map(obj => {
           process.stdout.write("P")
@@ -51,20 +51,20 @@ export default async function() {
             filename: basename(obj.filename),
             buffer: sharp(buffer)
               .resize(obj.width)
-              .webp({ quality: 85, reductionEffort: 6 } as sharp.WebpOptions)
+              .jpeg({ quality: 85 } as sharp.JpegOptions)
               .toBuffer()
           }
         })
         .concat([
           {
-            filename: `${meta.file}-wFull.webp`,
+            filename: `${meta.file}-wFull.jpeg`,
             buffer: sharp(buffer)
-              .webp({ quality: 85, reductionEffort: 6 } as sharp.WebpOptions)
+              .jpeg({ quality: 85 } as sharp.JpegOptions)
               .toBuffer()
           }
         ])
         .map(p => {
-          return uploadWebp(p.buffer, p.filename)
+          return uploadJpeg(p.buffer, p.filename)
         })
       await BlueBird.all(processedPhotoPromises).then(() => {
         fs.unlink(p)

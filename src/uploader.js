@@ -7,7 +7,7 @@ AWS.config.update({
   region: process.env.REGION
 })
 
-const uploadWebp = async function(bufferPromise, filename) {
+const uploadJpeg = async function(bufferPromise, filename) {
   process.stdout.write("U")
   let buffer = await bufferPromise
   var s3 = new AWS.S3({ apiVersion: "2006-03-01" })
@@ -15,7 +15,7 @@ const uploadWebp = async function(bufferPromise, filename) {
     Bucket: process.env.BUCKET,
     Key: filename,
     Body: buffer,
-    ContentType: "image/webp"
+    ContentType: "image/jpeg"
   }
   return s3.upload(params).promise()
 }
@@ -42,4 +42,4 @@ const uploadM4v = async function(file, filename) {
   return s3.upload(params).promise()
 }
 
-export { uploadWebp, uploadJSON, uploadM4v }
+export { uploadJpeg, uploadJSON, uploadM4v }
