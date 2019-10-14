@@ -5,7 +5,7 @@ import * as BlueBird from "bluebird"
 import * as sharp from "sharp"
 import { basename } from "path"
 import { uploadJpeg } from "./uploader.js"
-import * as utils from "./utils.js"
+import { checkForExactCopy, replaceOrAddPhoto } from "./utils"
 
 let photoIndex = fs.readJsonSync("./index.json")
 
@@ -32,12 +32,12 @@ export default async function() {
       const buffer = await fs.readFile(p)
       const meta = await getMediaMetadata(p, buffer)
 
-      if (utils.checkForExactCopy(photoIndex, meta)) {
+      if (checkForExactCopy(photoIndex, meta)) {
         process.stdout.write(`S`)
         fs.unlink(p)
         return
       } else {
-        utils.replaceOrAddPhoto(photoIndex, meta)
+        replaceOrAddPhoto(photoIndex, meta)
       }
 
       const processedPhotoPromises = generateOutputFiles(

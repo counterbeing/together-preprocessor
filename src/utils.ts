@@ -1,4 +1,6 @@
-function checkForExactCopy(index, meta) {
+import { Media } from "./types"
+
+function checkForExactCopy(index: Media[], meta: any) {
   return index.some(photoFromIndex => {
     return (
       photoFromIndex.checksum == meta.checksum &&
@@ -7,7 +9,7 @@ function checkForExactCopy(index, meta) {
   })
 }
 
-function replaceOrAddPhoto(index, photo) {
+function replaceOrAddPhoto(index: Media[], photo: Media) {
   const i = index.findIndex(obj => {
     return obj.file == photo.file && obj.date == photo.date
   })

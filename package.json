@@ -9,7 +9,7 @@
   "scripts": {
     "process": "tsc && node built/index.js",
     "add-story": "node built/add-story.js",
-    "vid": "babel-node src/process-videos.js",
+    "vid": "tsc && node built/process-videos.js",
     "test": "mocha --require @babel/register"
   },
   "babel": {

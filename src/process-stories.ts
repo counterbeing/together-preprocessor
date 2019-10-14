@@ -6,6 +6,7 @@ import { kebabCase, every } from "lodash"
 import * as moment from "moment"
 import { geocoder } from "./geocoder.js"
 import { uploadJSON } from "./uploader.js"
+import { Story } from "./types"
 const yamlFront = require("yaml-front-matter")
 
 const parseStoryFile = async (file: string) => {
@@ -24,17 +25,6 @@ const parseStoryFile = async (file: string) => {
 const processMarkdown = (md: string) => {
   const converter = new showdown.Converter()
   return converter.makeHtml(md)
-}
-
-interface Story {
-  id: string
-  title: string
-  location: string
-  startDate: Date
-  endDate?: Date
-  lat?: number
-  lng?: number
-  photos?: any[]
 }
 
 export default async function() {
