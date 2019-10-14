@@ -54,7 +54,7 @@ var fs = require("fs-extra");
 var lodash_1 = require("lodash");
 var moment = require("moment");
 var geocoder_js_1 = require("./geocoder.js");
-var uploader_js_1 = require("./uploader.js");
+var uploader_1 = require("./uploader");
 var yamlFront = require("yaml-front-matter");
 var parseStoryFile = function (file) { return __awaiter(void 0, void 0, void 0, function () {
     var contents, obj;
@@ -151,7 +151,7 @@ function default_1() {
                         return __assign(__assign({}, story), { photos: photos });
                     });
                     overviewIndex = stories.map(function (s) {
-                        uploader_js_1.uploadJSON(JSON.stringify(s), s.id + ".json");
+                        uploader_1.uploadJSON(JSON.stringify(s), s.id + ".json");
                         return {
                             id: s.id,
                             title: s.title,
@@ -162,9 +162,9 @@ function default_1() {
                         };
                     });
                     storiesIndex = JSON.stringify(overviewIndex);
-                    uploader_js_1.uploadJSON(storiesIndex, "storiesIndex.json");
+                    uploader_1.uploadJSON(storiesIndex, "storiesIndex.json");
                     fs.writeJsonSync("storiesIndex.json", overviewIndex);
-                    uploader_js_1.uploadJSON(JSON.stringify(allPhotos), "photosIndex.json");
+                    uploader_1.uploadJSON(JSON.stringify(allPhotos), "photosIndex.json");
                     return [2 /*return*/];
             }
         });

@@ -43,7 +43,7 @@ var BlueBird = require("bluebird");
 var sharp = require("sharp");
 var path_1 = require("path");
 var uploader_js_1 = require("./uploader.js");
-var utils = require("./utils.js");
+var utils_1 = require("./utils");
 var photoIndex = fs.readJsonSync("./index.json");
 function generateOutputFiles(sizes, filename, format) {
     return sizes.map(function (size) {
@@ -74,13 +74,13 @@ function default_1() {
                                         return [4 /*yield*/, get_media_metadata_js_1.default(p, buffer)];
                                     case 2:
                                         meta = _a.sent();
-                                        if (utils.checkForExactCopy(photoIndex, meta)) {
+                                        if (utils_1.checkForExactCopy(photoIndex, meta)) {
                                             process.stdout.write("S");
                                             fs.unlink(p);
                                             return [2 /*return*/];
                                         }
                                         else {
-                                            utils.replaceOrAddPhoto(photoIndex, meta);
+                                            utils_1.replaceOrAddPhoto(photoIndex, meta);
                                         }
                                         processedPhotoPromises = generateOutputFiles([2100, 1600, 1200, 700, 250], meta.file, "jpeg")
                                             .map(function (obj) {

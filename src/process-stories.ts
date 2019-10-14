@@ -5,7 +5,7 @@ import * as fs from "fs-extra"
 import { kebabCase, every } from "lodash"
 import * as moment from "moment"
 import { geocoder } from "./geocoder.js"
-import { uploadJSON } from "./uploader.js"
+import { uploadJSON } from "./uploader"
 import { Story } from "./types"
 const yamlFront = require("yaml-front-matter")
 

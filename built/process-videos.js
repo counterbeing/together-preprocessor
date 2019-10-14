@@ -38,27 +38,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var get_media_metadata_1 = require("./get-media-metadata");
 var globby = require("globby");
-var path_1 = require("path");
-var uploader_js_1 = require("./uploader.js");
 var fs = require("fs-extra");
+var path_1 = require("path");
+var uploader_1 = require("./uploader");
+var utils_1 = require("./utils");
 var photoIndex = fs.readJsonSync("./index.json");
-function checkForExactCopy(index, meta) {
-    return index.some(function (photoFromIndex) {
-        return (photoFromIndex.checksum == meta.checksum &&
-            photoFromIndex.date == meta.date);
-    });
-}
-function replaceOrAddPhoto(index, photo) {
-    var i = index.findIndex(function (obj) {
-        return obj.file == photo.file && obj.date == photo.date;
-    });
-    if (i == -1) {
-        photoIndex.push(photo);
-    }
-    else {
-        photoIndex[i] = photo;
-    }
-}
 exports.default = (function (folder) {
     return __awaiter(this, void 0, void 0, function () {
         var paths, videoUploadPromises;
@@ -75,19 +59,19 @@ exports.default = (function (folder) {
                                 case 0: return [4 /*yield*/, get_media_metadata_1.default(p)];
                                 case 1:
                                     meta = _a.sent();
-                                    exactCopyExists = checkForExactCopy(photoIndex, meta);
+                                    exactCopyExists = utils_1.checkForExactCopy(photoIndex, meta);
                                     if (exactCopyExists) {
                                         process.stdout.write("S");
                                         fs.unlink(p);
                                         return [2 /*return*/];
                                     }
                                     else {
-                                        replaceOrAddPhoto(photoIndex, meta);
+                                        utils_1.replaceOrAddPhoto(photoIndex, meta);
                                     }
                                     return [4 /*yield*/, fs.readFile(p)];
                                 case 2:
                                     buffer = _a.sent();
-                                    return [2 /*return*/, uploader_js_1.uploadM4v(buffer, path_1.basename(meta.file)).then(function () {
+                                    return [2 /*return*/, uploader_1.uploadM4v(buffer, path_1.basename(meta.file)).then(function () {
                                             fs.unlink(p);
                                         })];
                             }

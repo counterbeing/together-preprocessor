@@ -1,5 +1,4 @@
 import * as AWS from "aws-sdk"
-import fs from "fs"
 
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -7,7 +6,10 @@ AWS.config.update({
   region: process.env.REGION
 })
 
-const uploadJpeg = async function(bufferPromise, filename) {
+const uploadJpeg = async function(
+  bufferPromise: Promise<Buffer>,
+  filename: string
+) {
   process.stdout.write("U")
   let buffer = await bufferPromise
   var s3 = new AWS.S3({ apiVersion: "2006-03-01" })
@@ -20,7 +22,7 @@ const uploadJpeg = async function(bufferPromise, filename) {
   return s3.upload(params).promise()
 }
 
-const uploadJSON = async function(file, filename) {
+const uploadJSON = async function(file: string, filename: string) {
   var s3 = new AWS.S3({ apiVersion: "2006-03-01" })
   var params = {
     Bucket: process.env.BUCKET,
@@ -31,7 +33,7 @@ const uploadJSON = async function(file, filename) {
   return s3.upload(params).promise()
 }
 
-const uploadM4v = async function(file, filename) {
+const uploadM4v = async function(file: Buffer, filename: string) {
   var s3 = new AWS.S3({ apiVersion: "2006-03-01" })
   var params = {
     Bucket: process.env.BUCKET,
