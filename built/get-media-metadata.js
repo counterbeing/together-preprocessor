@@ -72,7 +72,7 @@ function getData(file) {
 function mapExtensionToContentType(file) {
     var dext = path_1.extname(file).toLowerCase();
     return {
-        ".jpg": "image/webp",
+        ".jpg": "image/jpeg",
         ".m4v": "video/x-m4v"
     }[dext];
 }

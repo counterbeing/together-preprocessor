@@ -82,27 +82,27 @@ function default_1() {
                                         else {
                                             utils.replaceOrAddPhoto(photoIndex, meta);
                                         }
-                                        processedPhotoPromises = generateOutputFiles([2100, 1600, 1200, 700, 250], meta.file, "webp")
+                                        processedPhotoPromises = generateOutputFiles([2100, 1600, 1200, 700, 250], meta.file, "jpeg")
                                             .map(function (obj) {
                                             process.stdout.write("P");
                                             return {
                                                 filename: path_1.basename(obj.filename),
                                                 buffer: sharp(buffer)
                                                     .resize(obj.width)
-                                                    .webp({ quality: 85, reductionEffort: 6 })
+                                                    .jpeg({ quality: 85 })
                                                     .toBuffer()
                                             };
                                         })
                                             .concat([
                                             {
-                                                filename: meta.file + "-wFull.webp",
+                                                filename: meta.file + "-wFull.jpeg",
                                                 buffer: sharp(buffer)
-                                                    .webp({ quality: 85, reductionEffort: 6 })
+                                                    .jpeg({ quality: 85 })
                                                     .toBuffer()
                                             }
                                         ])
                                             .map(function (p) {
-                                            return uploader_js_1.uploadWebp(p.buffer, p.filename);
+                                            return uploader_js_1.uploadJpeg(p.buffer, p.filename);
                                         });
                                         return [4 /*yield*/, BlueBird.all(processedPhotoPromises).then(function () {
                                                 fs.unlink(p);

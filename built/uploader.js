@@ -42,7 +42,7 @@ AWS.config.update({
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     region: process.env.REGION
 });
-var uploadWebp = function (bufferPromise, filename) {
+var uploadJpeg = function (bufferPromise, filename) {
     return __awaiter(this, void 0, void 0, function () {
         var buffer, s3, params;
         return __generator(this, function (_a) {
@@ -57,14 +57,14 @@ var uploadWebp = function (bufferPromise, filename) {
                         Bucket: process.env.BUCKET,
                         Key: filename,
                         Body: buffer,
-                        ContentType: "image/webp"
+                        ContentType: "image/jpeg"
                     };
                     return [2 /*return*/, s3.upload(params).promise()];
             }
         });
     });
 };
-exports.uploadWebp = uploadWebp;
+exports.uploadJpeg = uploadJpeg;
 var uploadJSON = function (file, filename) {
     return __awaiter(this, void 0, void 0, function () {
         var s3, params;
