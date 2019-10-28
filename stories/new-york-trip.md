@@ -1,7 +1,7 @@
 ---
 title: Surprise Birthday in New York
 start_date: 2019-05-24T12:57:15.000Z
-end_date: 2019-05-27T00:27:13.000Z
+end_date: 2019-05-28T00:27:13.000Z
 location: Brooklyn, NY
 description: A drive to Brooklyn from West Virginia, and back. A quick stop  over in New Jersey as well, for a summery pool day.
 ---
