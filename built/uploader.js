@@ -69,6 +69,7 @@ var uploadJSON = function (file, filename) {
     return __awaiter(this, void 0, void 0, function () {
         var s3, params;
         return __generator(this, function (_a) {
+            console.log("Uploading JSON: " + filename);
             s3 = new AWS.S3({ apiVersion: "2006-03-01" });
             params = {
                 Bucket: process.env.BUCKET,
