@@ -14,3 +14,5 @@ site](https://www.hipcamp.com/pennsylvania/the-pond/overland-camping-at-the-pond
 we found on hipcamp, which was complete with a pond, and stocked with firewood.
 We didn't get to use the firewood as it was raining on and off and the hour was
 already late, but we woke up to lush green grassy area, dotted with trees.
+
+Katie surprised Laura for her birthday, along with a few other friends. We spent a couple of nights in Brooklyn for the celebration, and then stopped off in New Jersey on our way back out of town. 
