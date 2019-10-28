@@ -14,7 +14,7 @@ up in the cute little town that is Terlingua. It's got an artsy individualist
 flair, but comes with a warning to not fuck it up. There were stickers
 everywhere saying things like "Don't Marfa my Terlingua". On the corkboard at
 the gas station, the most prominently posted thing was someone offering to
-purchase used water systems.
+purchase used water systems. It’s interesting the way there’s an obvious dissonance around taking tourist money and not becoming a sell out town.
 
 We went for a quick dip into the park (wich also included a dip). We lost a bit
 of time to the park, which really didn't bother us in the slightest, but for the
