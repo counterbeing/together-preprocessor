@@ -1549,23 +1549,11 @@
         "checksum": "cf3a5799781b4ddf52c6f5092ba970d2"
     },
     {
-        "file": "689753e5-d156-3735-a5af-e1ae7c4e129d",
-        "date": "2019-07-25T19:56:19.000Z",
-        "description": "Womaning the guns.",
-        "contentType": "image/jpeg",
-        "originalFileName": "IMG_4190.jpg",
-        "lat": 48.15739722222222,
-        "lng": -122.6749638888889,
-        "width": 4032,
-        "height": 3024,
-        "checksum": "5d4c6684cdc02e6ff32583ce0b6d231f"
-    },
-    {
         "file": "4317faa5-87ee-3fb5-a6b7-1bf390c5d1e3",
         "date": "2019-08-27T19:17:22.000Z",
         "description": "A panorama of our camp set up. Basic, but complete.",
         "contentType": "image/jpeg",
-        "originalFileName": "IMG_4190 (1).jpg",
+        "originalFileName": "IMG_4190.jpg",
         "lat": 40.77212222222222,
         "lng": -119.20491944444444,
         "width": 16378,
@@ -6150,17 +6138,6 @@
         "checksum": "d9959ae8d87a69a601cc8dca927ac9c8"
     },
     {
-        "file": "beac3c61-af19-3b21-975f-17e9126941e8",
-        "date": "2019-08-21T22:51:19.000Z",
-        "contentType": "video/x-m4v",
-        "originalFileName": "IMG_4861.m4v",
-        "lat": 37.757888888888886,
-        "lng": -122.3934,
-        "width": 1920,
-        "height": 1080,
-        "checksum": "454a1243ba45f00ab6100f679ad6fa2c"
-    },
-    {
         "file": "45d293b7-6e9a-3bfd-8de8-b702afda54e7",
         "date": "2019-02-23T16:29:05.000Z",
         "contentType": "video/x-m4v",
@@ -6242,17 +6219,6 @@
         "width": 1920,
         "height": 1080,
         "checksum": "d4e69a01d7aad2befc371269e1b76357"
-    },
-    {
-        "file": "4c0d7ad4-97f0-3bb4-a44a-190ccbace265",
-        "date": "2019-08-31T10:08:31.000Z",
-        "contentType": "video/x-m4v",
-        "originalFileName": "IMG_4302.m4v",
-        "lat": 40.7892,
-        "lng": -119.22118888888889,
-        "width": 1920,
-        "height": 1080,
-        "checksum": "e5962a9b779a1e22cc6e956362c8b159"
     },
     {
         "file": "77ce3043-4992-3f81-9952-861515637118",
@@ -6364,7 +6330,7 @@
         "date": "2019-08-31T10:08:31.000Z",
         "description": "Lisa finds a bit of art.",
         "contentType": "video/x-m4v",
-        "originalFileName": "IMG_4302 (1).m4v",
+        "originalFileName": "IMG_4302.m4v",
         "lat": 40.7892,
         "lng": -119.22118888888889,
         "width": 1920,
@@ -6385,7 +6351,7 @@
         "file": "ef08fa45-8e91-32b0-a29b-41ed3a3fc4d2",
         "date": "2019-08-21T22:51:19.000Z",
         "contentType": "video/x-m4v",
-        "originalFileName": "IMG_4861 (1).m4v",
+        "originalFileName": "IMG_4861.m4v",
         "lat": 37.757888888888886,
         "lng": -122.3934,
         "width": 1920,
