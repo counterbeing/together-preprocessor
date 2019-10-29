@@ -1,0 +1,49 @@
+org: corylogan
+app: together
+service:
+  name: image-resizing
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+plugins:
+  - serverless-webpack
+
+functions:
+  resize:
+    handler: src/handlers/resize-images.ts
+    package:
+      exclude:
+        - '**/**'
+      include:
+        - src/handlers/resize-images.ts
+    events:
+      - s3:
+          bucket: together-blog
+          event: s3:ObjectCreated:*
+          # rules:
+          #   - prefix: originals/
+
+    environment:
+      REGION: us-east-1
+    iamRoleStatements:
+      - Effect: 'Allow'
+        Action:
+          - 's3:GetObject'
+        Resource: 'arn:aws:s3:::together-blog/*'
+      - Effect: 'Allow'
+        Action:
+          - 's3:PutObject'
+        Resource: 'arn:aws:s3:::together-blog/*'
+layers:
+  exiftool:
+    path: ./layers/exiftool
+    allowedAccounts:
+      - '*'
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    packager: 'yarn'
+    includeModules: true

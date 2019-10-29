@@ -1,8 +1,20 @@
 {
   "compilerOptions": {
-    "outDir": "./built",
+    "rootDir": "./src/",
     "allowJs": true,
-    "target": "es5"
+    "declaration": false,
+    "esModuleInterop": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es2019",
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": ["./src/**/*"]
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }

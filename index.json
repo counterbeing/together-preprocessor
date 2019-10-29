@@ -6720,5 +6720,122 @@
         "width": 1920,
         "height": 1080,
         "checksum": "6a087bf177eaebe63e2bca40eca63047"
+    },
+    {
+        "file": "34e6e618-d6e2-3e64-a0a6-c59ad35ba576",
+        "date": "2019-05-04T21:08:42.000Z",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_1019.jpg",
+        "lat": 38.36443333333334,
+        "lng": -81.69220833333334,
+        "width": 1280,
+        "height": 960,
+        "checksum": "5d86b9a06dc941575df52a5528e9279c"
+    },
+    {
+        "file": "d4136612-4ca0-3f22-a36b-b071c0bab409",
+        "date": "2019-07-31T19:48:53.000Z",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_0159.jpg",
+        "lat": 47.60658888888889,
+        "lng": -122.31169722222222,
+        "width": 3264,
+        "height": 2448,
+        "checksum": "fc4270dcab5136015586b6d2cec7ab8c"
+    },
+    {
+        "file": "a20052eb-ed9d-323e-89c1-880508c4e611",
+        "date": "2019-10-19T19:51:50.000Z",
+        "description": "Sports ball!",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_0559.jpg",
+        "lat": 47.65006666666667,
+        "lng": -122.30031666666666,
+        "width": 1280,
+        "height": 960,
+        "checksum": "b62b44ee76ae744331f4b091b8ecad6d"
+    },
+    {
+        "file": "a611f61b-1b24-331e-bacb-5bb78ea4b6f9",
+        "date": "2019-07-25T20:18:03.000Z",
+        "description": "I'm on a BOAT motherf*#@er!",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_0148.jpg",
+        "lat": 48.158091666666664,
+        "lng": -122.67253055555555,
+        "width": 3264,
+        "height": 2448,
+        "checksum": "6b635b42f990cb974c6ff55d1a30666a"
+    },
+    {
+        "file": "dd4b612d-bc71-3f58-a986-16a6d49d94cf",
+        "date": "2019-09-22T01:11:53.000Z",
+        "description": "Some of the best ramen in Seattle... So far.",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_0454.jpg",
+        "lat": 47.661402777777774,
+        "lng": -122.33831111111111,
+        "width": 2448,
+        "height": 3264,
+        "checksum": "87b94b691b3f50e6c1e4cfdffe581266"
+    },
+    {
+        "file": "e8834d29-93e8-33f4-b4fe-aae7b5565ca9",
+        "date": "2019-03-15T18:32:45.000Z",
+        "description": "Inside CAMC.",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_0875.jpg",
+        "lat": 38.347144444444446,
+        "lng": -81.62744722222222,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "93f3f31d8b4df466c982327364a617fb"
+    },
+    {
+        "file": "e08ad8a1-4939-3260-8172-56298d093691",
+        "date": "2019-07-12T15:47:07.000Z",
+        "description": "Cory likes spanks.",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_0013.jpg",
+        "lat": 41.022975,
+        "lng": -78.43630277777778,
+        "width": 3264,
+        "height": 2448,
+        "checksum": "4a5739212657d4ba9db1c00ecb1f37b4"
+    },
+    {
+        "file": "5ea5803c-6a6f-337e-a776-05b6439e05ce",
+        "date": "2019-03-14T21:51:15.000Z",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_0866.jpg",
+        "lat": 38.364197222222224,
+        "lng": -81.69233611111112,
+        "width": 4032,
+        "height": 3024,
+        "checksum": "20d97a4a7626bbdeec0a38294ca740b2"
+    },
+    {
+        "file": "8ff02de9-8446-3380-ad3d-10fd91ebf257",
+        "date": "2019-03-14T22:07:31.000Z",
+        "description": "Just takin' a break. 'C' is for Charleston.",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_0871.jpg",
+        "lat": 38.36438888888889,
+        "lng": -81.69234444444444,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "1f1ecb8290ca5b3ced582d542e683592"
+    },
+    {
+        "file": "b4f13bc7-16fd-3abd-a76d-4f5fade26ba4",
+        "date": "2019-06-25T00:59:35.000Z",
+        "description": "Legs! It's funny every time.",
+        "contentType": "image/jpeg",
+        "originalFileName": "IMG_1252.jpg",
+        "lat": 38.364536111111114,
+        "lng": -81.69222222222223,
+        "width": 3024,
+        "height": 4032,
+        "checksum": "b6502940853aeac7375ebe1c531ee630"
     }
 ]
