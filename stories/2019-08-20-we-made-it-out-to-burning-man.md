@@ -2,7 +2,7 @@
 title: "We made it out to Burning Man"
 location: "Gerlach, NV"
 start_date: 2019-08-20T19:00:00.000Z
-end_date: 2019-09-04T19:00:00.000Z
+end_date: 2019-09-05T23:00:00.000Z
 ---
 
 This was Katie's inaugural burn. Burning Man is a sort of arts festival, or perhaps a social experiment in a temporary society. Whatever you wan't to call it, it's one hell of a stimulating week.
