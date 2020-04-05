@@ -7,41 +7,34 @@ const slsw = require('serverless-webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const webpack = require('webpack');
 
-const mode = slsw.lib.webpack.isLocal ? 'development' : 'production';
+// const mode = slsw.lib.webpack.isLocal ? 'development' : 'production';
+const mode = 'development';
 console.log(`Bundling for mode: ${mode}`);
-
-const nodeModules = {};
-fs.readdirSync('node_modules')
-  .filter(item => ['.bin'].indexOf(item) === -1) // exclude the .bin folder
-  .forEach(mod => {
-    nodeModules[mod] = 'commonjs ' + mod;
-  });
+console.log('Entries:');
+console.log(slsw.lib.entries);
 
 module.exports = {
   optimization: {
     minimize: false,
     namedModules: true,
     namedChunks: true,
+    sideEffects: false,
   },
   mode,
   entry: slsw.lib.entries,
-  externals: nodeModules,
+  // entry: './src/handlers/resize-images.ts',
   devtool: 'source-map',
   plugins: [
     // new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
     new BundleAnalyzerPlugin({ analyzerMode: 'disabled' }),
     new ForkTsCheckerWebpackPlugin(),
-    // new CopyPlugin([
-    //   {
-    //     from: 'src/config/*.json',
-    //     to: './src/config',
-    //     context: './',
-    //   },
-    // ]),
     new webpack.IgnorePlugin(/\.\/native/, /\/pg\//, /aws-sdk/),
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    alias: {
+      lodash: 'lodash-es',
+    },
   },
   output: {
     libraryTarget: 'commonjs',

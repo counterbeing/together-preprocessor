@@ -1,25 +1,11 @@
 import sexagesimal from '@mapbox/sexagesimal';
 import md5 from 'md5';
-import fs from 'fs-extra';
-import { extname } from 'path';
-import exiftool from 'node-exiftool';
-import exiftoolBin from 'dist-exiftool';
+import { extname, basename } from 'path';
 import moment from 'moment';
 import getUuid from 'uuid-by-string';
-
-const ep = new exiftool.ExiftoolProcess(exiftoolBin);
-let epIsOpen = false;
-
-async function getData(file: string) {
-  if (epIsOpen == false) {
-    await ep.open();
-    epIsOpen = true;
-  }
-
-  const metadata = await ep.readMetadata(file);
-  // ep.close()
-  return metadata;
-}
+import fs from 'fs';
+import exif from 'jpeg-exif';
+import dms2dec from 'dms2dec';
 
 function mapExtensionToContentType(file: string) {
   let dext = extname(file).toLowerCase();
@@ -29,34 +15,40 @@ function mapExtensionToContentType(file: string) {
   }[dext];
 }
 
-export default async function(filename: string, buffer: any = null) {
-  if (!buffer) buffer = await fs.readFile(filename);
-  if (!buffer) throw 'No buffer provided.';
+export const getMediaMetadata = async (
+  filename: string,
+  buffer: any = null,
+) => {
+  if (!buffer) buffer = fs.readFileSync(filename);
 
-  let checksum = md5(buffer);
-  let data = await getData(filename);
-  data = data['data'][0];
+  const checksum = md5(buffer);
+  const data = exif.fromBuffer(buffer);
 
   let lat: number | null = null;
   let lng: number | null = null;
 
-  if (data.GPSLatitude && data.GPSLongitude) {
-    lat = sexagesimal(data.GPSLatitude);
-    lng = sexagesimal(data.GPSLongitude);
+  const gps = data.GPSInfo;
+  if (gps.GPSLatitude && gps.GPSLongitude) {
+    [lat, lng] = dms2dec(
+      gps.GPSLatitude,
+      gps.GPSLatitudeRef,
+      gps.GPSLongitude,
+      gps.GPSLongitudeRef,
+    );
   }
-  let date = data.ContentCreateDate || data.CreateDate;
+  let date = data.DateTime;
   date = moment(date, 'YYYY:MM:DD HH:mm:ssZ').toISOString();
 
   return {
-    file: getUuid(data.FileName + date),
+    file: getUuid(basename(filename) + date),
     date,
     description: data.Description || data.ImageDescription,
-    contentType: mapExtensionToContentType(data.FileName),
-    originalFileName: data.FileName,
+    contentType: mapExtensionToContentType(filename),
+    originalFileName: basename(filename),
     lat,
     lng,
-    width: data.ImageWidth,
-    height: data.ImageHeight,
+    width: data.SubExif.PixelXDimension,
+    height: data.SubExif.PixelYDimension,
     checksum,
   };
-}
+};

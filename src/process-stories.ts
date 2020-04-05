@@ -2,9 +2,10 @@ import globby from 'globby';
 import { isWithinInterval, compareDesc } from 'date-fns';
 import showdown from 'showdown';
 import fs from 'fs-extra';
-import { kebabCase, every } from 'lodash';
+import every from 'lodash-es/every';
+import kebabCase from 'lodash-es/kebabCase';
 import moment from 'moment';
-import { geocoder } from './geocoder.js';
+import geocoder from './geocoder';
 import { uploadJSON } from './uploader';
 import { Story } from './types';
 const yamlFront = require('yaml-front-matter');
@@ -38,7 +39,7 @@ const isDefnitelyWithinInterval = (photo: any, story: any) => {
 
 export default async function() {
   const paths = await globby(['stories/*.md']);
-  let stories: any = paths.map(path => parseStoryFile(path));
+  let stories: any = paths.map((path) => parseStoryFile(path));
   let storiesJsonString: string = fs.readFileSync('index.json').toString();
   const allPhotos = JSON.parse(storiesJsonString).map((p: any) => {
     p.date = new Date(p.date);
@@ -69,9 +70,11 @@ export default async function() {
     return { ...e, previousId: previous.id, nextId: next.id };
   });
 
-  // Stories can be nested within bigger stories, for example, we might be
-  // staying somehwere, but go on a day trip. If the day trip itself warrants a
-  // story, those photos should not be included in the longer stay.
+  /*
+   * Stories can be nested within bigger stories, for example, we might be
+   * staying somehwere, but go on a day trip. If the day trip itself warrants a
+   * story, those photos should not be included in the longer stay.
+   */
   stories = stories.map((story: Story) => {
     const overlaps = stories.filter((s: Story) => {
       return isDefnitelyWithinInterval(s, story) && s.id !== story.id;
@@ -79,7 +82,7 @@ export default async function() {
 
     const photos = story.photos || [];
     photos
-      .filter(photo => {
+      .filter((photo) => {
         return every(overlaps, (overlap: Story) => {
           return !isDefnitelyWithinInterval(photo, overlap);
         });

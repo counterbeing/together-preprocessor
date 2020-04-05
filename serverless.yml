@@ -6,13 +6,25 @@ service:
 provider:
   name: aws
   runtime: nodejs12.x
+  tracing:
+    apiGateway: true
+    lambda: true
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - s3:*
+      Resource: 'arn:aws:s3:::together-blog/*'
+      # Fn::Join: ['', [Fn::GetAtt: [ AssetBucket, Arn ], '/*'] ]
 
 plugins:
   - serverless-webpack
 
+package:
+  individually: true
+
 functions:
   resize:
-    handler: src/handlers/resize-images.ts
+    handler: src/handlers/resize-images.handler
     package:
       exclude:
         - '**/**'
@@ -22,6 +34,7 @@ functions:
       - s3:
           bucket: together-blog
           event: s3:ObjectCreated:*
+          # existing: true
           # rules:
           #   - prefix: originals/
 
@@ -42,8 +55,15 @@ layers:
     allowedAccounts:
       - '*'
 
+resources:
+  Resources:
+    AssetBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: together-blog-processing
+
 custom:
   webpack:
     webpackConfig: 'webpack.config.js'
     packager: 'yarn'
-    includeModules: true
+    includeModules: false
